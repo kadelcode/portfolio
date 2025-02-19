@@ -1,54 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-        <nav className='bg-gray-800 p-4'>
-            <div className='container mx-auto flex justify-between items-center'>
-                <div className='text-white text-lg font-bold'>
-                    MyWebsite
-                </div>
-                <div className='block md:hidden'>
-                    <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className='text-white focus:outline-none'
-                    >
-                        <svg
-                        className='w-6 h-6'
-                        fill='none'
-                        stroke="currentColor"
-                        viewBox='0 0 24 24'
-                        xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth="2"
-                            d={!isOpen ? "M4 6h16M4 12h16m-7 6h7" : "M6 18L18 6M6 6l12 12"}
-                            ></path>
-                        </svg>
-
-                    </button>
-                </div>
-
-                <div className={`w-full md:flex md:items-center md:w-auto ${isOpen ? 'block' : 'hidden'}`}>
-                    <div className='text-white'>
-                        <a href='#' className='block md:inline-block mt-2 md:mt-0 mr-4'>
-                            Home
-                        </a>
-                        <a href='#' className="block md:inline-block mt-2 md:mt-0 mr-4">
-                            About
-                        </a>
-                        <a href='#' className='block md:inline-block mt-2 md:mt-0'>
-                            Contact
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    )
-}
-
+  return (
+    <nav className="p-4 flex justify-between items-center text-black bg-purple-500">
+      <Link to="/" className="font-bold text-xl">KADEL</Link>
+      <div className="flex items-center space-x-4">
+        <Link to="/projects" className="hover:text-blue-500">Projects</Link>
+        <Link to="/contact" className="hover:text-blue-500">Contact</Link>
+        <ThemeToggle />
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;
