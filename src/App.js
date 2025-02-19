@@ -1,18 +1,14 @@
 import React from "react";
-import ThemeToggle from "./components/ThemeToggle";
+import Navbar from "./components/Navbar";
+/*{import ThemeToggle from "./components/ThemeToggle";}*/
 
-function App() {
+export default function App() {
   return (
     <div>
-      <header>
-        <h1>My Portfolio</h1>
-        <ThemeToggle />
-      </header>
-      <main>
-        <h2>My main content</h2>
-      </main>
+      <Navbar />
+      <div className="flex items-center justify-center min-h-screen bg-gray-700">
+        <h1 className="text-4xl font-bold text-blue-600">Hello, Tailwind CSS!</h1>
+      </div>
     </div>
-  )
-}
-
-export default App;
+  );
+};
