@@ -18,8 +18,8 @@ const Home = () => {
       }}
       ></div>
       <div className="text-center z-10 text-white md:ml-7 md:mr-7">
-        <h1 className="text-4xl font-bold mb-4"><TypingEffect /></h1>
-        <p className="text-md text-justify">
+        <h1 className="text-5xl md:text-7xl font-quicksand text-purple-400 font-bold mb-4"><TypingEffect /></h1><br />
+        <p className="text-md text-justify font-poppins md:text-2xl mt-5">
         I'm a passionate full stack software engineer who thrives on turning innovative ideas
         into robust, efficient, and elegant solutions. I love building scalable,
         user-friendly applications that solve real-world problems.
