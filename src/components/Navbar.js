@@ -38,7 +38,7 @@ const Navbar = () => {
 
       {/* Mobile Menu (Dropdown) */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden">
+        <div className="absolute top-14 left-0 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden">
           <Link to="/projects" className='hover:text-gray-300 text-white'>
             Projects
           </Link>
