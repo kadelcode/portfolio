@@ -10,6 +10,7 @@ const TypingEffect = () => {
       typeSpeed: 50,
       backSpeed: 25,
       loop: false, // No looping
+      once: true,
       showCursor: true, // Initially show cursor
       onComplete: () => {
         document.querySelector(".typed-cursor")?.remove(); // Remove cursor after typing

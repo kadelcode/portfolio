@@ -35,18 +35,18 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="z-40 backdrop-blur-md bg-gradient-to-r from-gray-900 via-purple-950/85 to-gray-500/50 p-4 flex justify-between items-center"
+    <nav className="z-40 backdrop-blur-md bg-gray-800 p-4 flex justify-between items-center"
     ref={navbarRef}
     >
-      <Link to="/" className="font-bold text-xl">KADEL</Link>
+      <Link to="/" className="text-purple-400 font-audiowide font-bold text-xl">KADELCODE</Link>
       
       {/* Mobile Menu Button */}
       <div className='md:hidden'> {/* Hidden on medium and larger screens */}
         <button onClick={toggleMobileMenu} className='text-white'>
           {isMobileMenuOpen ? (
-            <XMarkIcon className='h-6 w-6' /> // Close icon
+            <XMarkIcon className='h-8 w-8' /> // Close icon
           ) : (
-            <MenuIcon className='h-6 w-6' /> // Menu icon
+            <MenuIcon className='h-8 w-8' /> // Menu icon
           )}
         </button>
       </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
 
       {/* Mobile Menu (Dropdown) */}
       {isMobileMenuOpen && (
-        <div className="absolute top-14 left-0 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden" ref={dropdownRef} // Add ref to the dropdown
+        <div className="absolute top-14 left-0 w-full bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden" ref={dropdownRef} // Add ref to the dropdown
         >
           <Link to="/projects" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
             Projects
