@@ -8,6 +8,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import { ThemeProvider } from './components/ThemeContext';
+import { linearGradient } from 'framer-motion/client';
 
 function App() {
   const location = useLocation();
