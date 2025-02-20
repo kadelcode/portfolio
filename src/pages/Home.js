@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TypingEffect from '../components/TypingEffect';
 
 const Home = () => {
   return (
@@ -16,13 +17,14 @@ const Home = () => {
         backgroundSize: 'cover',
       }}
       ></div>
-      <div className="text-center z-10 text-white">
-        <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-        <p className="text-lg">I'm a passionate developer...</p>
-        <p className="text-lg">I'm a passionate developer...</p>
-        <p className="text-lg">I'm a passionate developer...</p>
-        <p className="text-lg">I'm a passionate developer...</p>
-        <p className="text-lg">I'm a passionate developer...</p>
+      <div className="text-center z-10 text-white md:ml-7 md:mr-7">
+        <h1 className="text-4xl font-bold mb-4"><TypingEffect /></h1>
+        <p className="text-md text-justify">
+        I'm a passionate full stack software engineer who thrives on turning innovative ideas
+        into robust, efficient, and elegant solutions. I love building scalable,
+        user-friendly applications that solve real-world problems.
+        </p>
+
       </div>
     </motion.div>
   );
