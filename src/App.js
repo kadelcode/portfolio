@@ -37,7 +37,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden">
+    <div className="font-poppins flex flex-col min-h-screen overflow-x-hidden">
       <Navbar />
       <div className="flex-grow">
         <AnimatePresence mode="wait">
