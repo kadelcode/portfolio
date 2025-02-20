@@ -1,17 +1,43 @@
-import { React, useState } from 'react';
+import { React, useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import { Bars3Icon as MenuIcon, XMarkIcon } from '@heroicons/react/24/solid'
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownRef = useRef(null); // Ref for the dropdown
+  const navbarRef = useRef(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeMobileMenu();
+      }
+    };
+
+    /*if (isMobileMenuOpen) { // Only add listener when menu is open
+      document.addEventListener('click', handleClickOutside);
+    }*/
+
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside); // Clean up
+    };
+  }, []);
+
   return (
-    <nav className="z-40 backdrop-blur-md bg-gradient-to-r from-gray-900 via-purple-950/85 to-gray-500/50 p-4 flex justify-between items-center">
+    <nav className="z-40 backdrop-blur-md bg-gradient-to-r from-gray-900 via-purple-950/85 to-gray-500/50 p-4 flex justify-between items-center"
+    ref={navbarRef}
+    >
       <Link to="/" className="font-bold text-xl">KADEL</Link>
       
       {/* Mobile Menu Button */}
@@ -38,11 +64,12 @@ const Navbar = () => {
 
       {/* Mobile Menu (Dropdown) */}
       {isMobileMenuOpen && (
-        <div className="absolute top-14 left-0 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden">
-          <Link to="/projects" className='hover:text-gray-300 text-white'>
+        <div className="absolute top-14 left-0 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden" ref={dropdownRef} // Add ref to the dropdown
+        >
+          <Link to="/projects" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
             Projects
           </Link>
-          <Link to="/contact" className='hover:text-gray-300 text-white'>
+          <Link to="/contact" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
             Contact
           </Link>
           <ThemeToggle />
