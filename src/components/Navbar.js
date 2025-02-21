@@ -79,7 +79,7 @@ const Navbar = () => {
       
       {/* Mobile Menu Button */}
       <div className='md:hidden'> {/* Hidden on medium and larger screens */}
-        <button onClick={toggleMobileMenu} className='text-white'>
+        <button onClick={toggleMobileMenu} className='dark:text-white text-black'>
           {isMobileMenuOpen ? (
             <XMarkIcon className='h-8 w-8' /> // Close icon
           ) : (
@@ -89,14 +89,14 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center space-x-7 text-blac dark:text-white">
-        <Link to="/projects" className='hover:text-gray-700 dark:hover:text-gray-300'>
+      <div className="hidden md:flex items-center space-x-7 text-black dark:text-white">
+        <Link to="/projects" className='hover:text-gray-800 dark:hover:text-gray-300'>
           Projects
         </Link>
-        <Link to="/skills" className='hover:text-gray-700 dark:hover:text-gray-300'>
+        <Link to="/skills" className='hover:text-gray-800 dark:hover:text-gray-300'>
           Skills
         </Link>
-        <Link to="/contact" className='hover:text-gray-700 dark:hover:text-gray-300'>
+        <Link to="/contact" className='hover:text-gray-800 dark:hover:text-gray-300'>
           Contact
         </Link>
         <DarkModeToggle />
@@ -105,7 +105,7 @@ const Navbar = () => {
       {/* Mobile Menu (Dropdown) */} {/* Wrap with AnimatePresence for exit animations to correctly */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div className="absolute top-14 left-0 w-full bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
+          <motion.div className="absolute top-14 left-0 w-full bg-gray-200 dark:bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
             ref={dropdownRef} // Ref for the dropdown
             style={{ top: 0 }} // Initial style to avoid flashing
             variants={dropdownVariants} // Add variants
@@ -113,13 +113,13 @@ const Navbar = () => {
             animate="open" // Animate to open
             exit="closed" // Animation on exit
           >
-            <Link to="/projects" className='hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+            <Link to="/projects" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
               Projects
             </Link>
-            <Link to="/skills" className='hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+            <Link to="/skills" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
               Skills
             </Link>
-            <Link to="/contact" className='hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+            <Link to="/contact" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
               Contact
             </Link>
             <DarkModeToggle />
