@@ -25,7 +25,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="p-2 rounded-full focus:outline-none">
+    <button onClick={toggleTheme} className="text-purple-500 dark:text-purple-400 p-2 rounded-full focus:outline-none">
       {isDarkMode ? 'Light Mode☀️' : 'Dark Mode🌙'}
     </button>
   );
