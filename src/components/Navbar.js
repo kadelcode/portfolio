@@ -115,6 +115,9 @@ const Navbar = () => {
             <Link to="/projects" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
               Projects
             </Link>
+            <Link to="/skills" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
+              Skills
+            </Link>
             <Link to="/contact" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
               Contact
             </Link>
