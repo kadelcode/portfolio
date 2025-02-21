@@ -8,8 +8,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
-import { ThemeProvider } from './components/ThemeContext';
-import { linearGradient } from 'framer-motion/client';
+/*import { linearGradient } from 'framer-motion/client';*/
 
 function App() {
   const location = useLocation();
@@ -119,9 +118,7 @@ function App() {
 function RootApp() {
   return (
     <Router>
-      <ThemeProvider>
         <App />
-      </ThemeProvider>
     </Router>
   );
 }

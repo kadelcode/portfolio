@@ -1,6 +1,7 @@
 import { React, useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
+/*import ThemeToggle from './ThemeToggle';*/
+import DarkModeToggle from './DarkModeToggle';
 import { Bars3Icon as MenuIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -88,7 +89,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center space-x-4">
+      <div className="hidden md:flex items-center space-x-7">
         <Link to="/projects" className='hover:text-gray-300 text-white'>
           Projects
         </Link>
@@ -98,7 +99,7 @@ const Navbar = () => {
         <Link to="/contact" className='hover:text-gray-300 text-white'>
           Contact
         </Link>
-        <ThemeToggle />
+        <DarkModeToggle />
       </div>
 
       {/* Mobile Menu (Dropdown) */} {/* Wrap with AnimatePresence for exit animations to correctly */}
@@ -121,7 +122,7 @@ const Navbar = () => {
             <Link to="/contact" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
               Contact
             </Link>
-            <ThemeToggle />
+            <DarkModeToggle />
           </motion.div>
         )}
       </AnimatePresence>
