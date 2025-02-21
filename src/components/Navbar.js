@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null); // Ref for the dropdown
   const navbarRef = useRef(null);
+  const [navbarHeight, setNavBarHeight] = useState(0); // Store navbar height in state
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -33,6 +34,21 @@ const Navbar = () => {
       document.removeEventListener('mousedown', handleClickOutside); // Clean up
     };
   }, []);
+
+  useEffect(() => {
+    // Calculate dropdown top position
+    if (navbarRef.current) { // Reference the navbar element
+      setNavBarHeight(navbarRef.current.offsetHeight); // Update state
+    }
+  }, []); // Empty dependency array - calculate on mount
+
+  useEffect(() => {
+    if (dropdownRef.current && isMobileMenuOpen && navbarHeight > 0) {
+      dropdownRef.current.style.top = `${navbarHeight}px`;
+    } else if (dropdownRef.current){
+      dropdownRef.current.style.top = ``;
+    }
+  }, [isMobileMenuOpen, navbarHeight]); // Add navbarHeight as a dependency
 
   return (
     <nav className="z-40 backdrop-blur-md bg-gray-800 p-4 flex justify-between items-center"
@@ -64,7 +80,9 @@ const Navbar = () => {
 
       {/* Mobile Menu (Dropdown) */}
       {isMobileMenuOpen && (
-        <div className="absolute top-14 left-0 w-full bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden" ref={dropdownRef} // Add ref to the dropdown
+        <div className="absolute top-14 left-0 w-full bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
+        ref={dropdownRef} // Ref for the dropdown
+        style={{ top: 0 }} // Initial style to avoid flashing
         >
           <Link to="/projects" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
             Projects
