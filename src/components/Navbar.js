@@ -1,7 +1,8 @@
 import { React, useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
-import { Bars3Icon as MenuIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars3Icon as MenuIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,6 +10,25 @@ const Navbar = () => {
   const navbarRef = useRef(null);
   const [navbarHeight, setNavBarHeight] = useState(0); // Store navbar height in state
 
+  const dropdownVariants = {
+    open: {
+      y: 0, // Slide down
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+    closed: {
+      y: "-100%", // Slide up and out of view
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      }
+    }
+  }
+  
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -78,21 +98,28 @@ const Navbar = () => {
         <ThemeToggle />
       </div>
 
-      {/* Mobile Menu (Dropdown) */}
-      {isMobileMenuOpen && (
-        <div className="absolute top-14 left-0 w-full bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
-        ref={dropdownRef} // Ref for the dropdown
-        style={{ top: 0 }} // Initial style to avoid flashing
-        >
-          <Link to="/projects" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
-            Projects
-          </Link>
-          <Link to="/contact" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
-            Contact
-          </Link>
-          <ThemeToggle />
-        </div>
-      )}
+      {/* Mobile Menu (Dropdown) */} {/* Wrap with AnimatePresence for exit animations to correctly */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div className="absolute top-14 left-0 w-full bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
+            ref={dropdownRef} // Ref for the dropdown
+            style={{ top: 0 }} // Initial style to avoid flashing
+            variants={dropdownVariants} // Add variants
+            initial="closed" // Initial state
+            animate="open" // Animate to open
+            exit="closed" // Animation on exit
+          >
+            <Link to="/projects" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
+              Projects
+            </Link>
+            <Link to="/contact" className='hover:text-gray-300 text-white' onClick={closeMobileMenu}> {/* Close on link click */}
+              Contact
+            </Link>
+            <ThemeToggle />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
     </nav>
   );
 };
