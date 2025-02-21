@@ -44,7 +44,7 @@ const Skills = () => {
                                     <h4 className='text-xl font-semibold mb-2'>{skill.name}</h4> {/* Skill name */}
                                     <div className='bg-gray-200 dark:bg-gray-600 rounded-full h-2'>
                                         <div
-                                            className="bg-blue-500 dark:bg-blue-400 rounded-full h-2"
+                                            className="bg-purple-500 dark:bg-purple-400 rounded-full h-2"
                                             style={{ width: `${skill.level}%`}}
                                         ></div>
                                     </div>
