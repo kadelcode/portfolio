@@ -72,7 +72,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen, navbarHeight]); // Add navbarHeight as a dependency
 
   return (
-    <nav className="z-40 text-xl backdrop-blur-md text-black dark:text-white dark:bg-gray-800 p-4 flex justify-between items-center"
+    <nav className="z-40 text-xl backdrop-blur-md text-black dark:text-white dark:bg-gray-800 transition-colors duration-300 p-4 flex justify-between items-center"
     ref={navbarRef}
     >
       <Link to="/" className="text-purple-400 font-audiowide font-bold text-xl">KADELCODE</Link>
@@ -93,10 +93,10 @@ const Navbar = () => {
         <Link to="/projects" className='hover:text-gray-800 dark:hover:text-gray-300'>
           Projects
         </Link>
-        <Link to="/skills" className='hover:text-gray-800 dark:hover:text-gray-300'>
+        <Link to="/skills" className='hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-300'>
           Skills
         </Link>
-        <Link to="/contact" className='hover:text-gray-800 dark:hover:text-gray-300'>
+        <Link to="/contact" className='hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-300'>
           Contact
         </Link>
         <DarkModeToggle />
@@ -105,7 +105,8 @@ const Navbar = () => {
       {/* Mobile Menu (Dropdown) */} {/* Wrap with AnimatePresence for exit animations to correctly */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div className="absolute top-14 left-0 w-full bg-gray-200 dark:bg-gray-700 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
+          <motion.div
+            className="absolute top-14 left-0 w-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
             ref={dropdownRef} // Ref for the dropdown
             style={{ top: 0 }} // Initial style to avoid flashing
             variants={dropdownVariants} // Add variants
