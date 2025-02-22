@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion } from 'framer-motion'; // Import motion
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import About from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Skills from './pages/Skills';
@@ -52,6 +53,19 @@ function App() {
                   exit="out"
                 >
                   <Home />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <motion.div
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                >
+                  <About />
                 </motion.div>
               }
             />
