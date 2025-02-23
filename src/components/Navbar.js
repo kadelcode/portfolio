@@ -90,6 +90,9 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-7 text-black dark:text-white">
+        <Link to="/about" className='hover:text-gray-800 dark:hover:text-gray-300'>
+          About
+        </Link>
         <Link to="/projects" className='hover:text-gray-800 dark:hover:text-gray-300'>
           Projects
         </Link>
@@ -114,6 +117,9 @@ const Navbar = () => {
             animate="open" // Animate to open
             exit="closed" // Animation on exit
           >
+            <Link to="/about" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+              About
+            </Link>
             <Link to="/projects" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
               Projects
             </Link>
