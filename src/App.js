@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion } from 'framer-motion'; // Import motion
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import About from './pages/Home';
+import About from './pages/About';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Skills from './pages/Skills';
