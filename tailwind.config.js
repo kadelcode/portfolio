@@ -7,7 +7,11 @@ module.exports = {
         poppins: ['Poppins'],
         quicksand: ['Quicksand'],
         audiowide: ['Audiowide']
-      }
+      },
+      backgroundImage: {
+        "light-mode": "url('../public/images/light-mode-background.jpg')",
+        "dark-mode": "url('../public/images/dark-mode-background.jpg')",
+      },
     },
   },
   plugins: [],
