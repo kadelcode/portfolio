@@ -76,6 +76,21 @@ const Contact = () => {
             />
             {errors.email && <p className='text-red-500 text-xs italic'>{errors.email.message}</p>}
           </div>
+
+          {/* Message section */}
+          <div className='mb-6'>
+            <label className='block text-gray-700 dark:text-gray-300 text-sm md:text-lg font-bold mb-2' htmlFor='message'>
+              Message
+            </label>
+            <textarea
+              {...register('message', { required: 'Message is required '})}
+              className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              id='message'
+              placeholder='Your Message'
+              rows='5'
+            />
+            {errors.message && <p className='text-red-500 text-xs italic'>{errors.message}</p>}
+          </div>
         </form>
       </div>
     </motion.div>
