@@ -55,6 +55,27 @@ const Contact = () => {
             />
             {errors.name && <p className="text-red-500 text-xs italic">{errors.name.message}</p>}
           </div>
+
+          {/*Email Section */}
+          <div className="mb-4">
+            <label className='block text-gray-700 dark:text-gray-300 text-sm md:text-lg font-bold mb-2 htmlFor="email'>
+              Email
+            </label>
+            <input
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Invalid email address',
+                },
+              })}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id='email'
+              type='email'
+              placeholder='Your Email'
+            />
+            {errors.email && <p className='text-red-500 text-xs italic'>{errors.email.message}</p>}
+          </div>
         </form>
       </div>
     </motion.div>
