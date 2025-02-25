@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Spinner from "./Spinner";
+import animationData from "../assets/lottie_cublic_spinner.json";
+import Lottie from "lottie-react";
 
 
 const PageLoader = ({ children }) => {
@@ -22,14 +24,18 @@ const PageLoader = ({ children }) => {
         setTimeout(() => {
             setLoading(false);
             clearTimeout(timeout);
-        }, 500); // Simulating a 1/2s page load
+        }, 2000);
 
         return () => clearTimeout(timeout);
     }, [location.pathname]); // Runs on route change
 
     return (
         <>
-            {loading && <Spinner />}
+            {loading && (
+                <div className="min-h-screen flex justify-center bg-white dark:bg-gray-800 bg-opacity-75 z-50">
+                    <Lottie animationData={animationData} loop={true}/>
+                </div>
+            )}
             {error && <div className="text-red-500 text-center mt-4">{error}</div>}
             {!loading && children}
         </>
