@@ -91,6 +91,16 @@ const Contact = () => {
             />
             {errors.message && <p className='text-red-500 text-xs italic'>{errors.message}</p>}
           </div>
+          
+          {/*Send message div*/}
+          <div className='flex items-center justify-between'>
+            <button
+              className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+              type='submit'
+            >
+                Send Message
+              </button>
+          </div>
         </form>
       </div>
     </motion.div>
