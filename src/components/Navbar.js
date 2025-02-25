@@ -1,6 +1,5 @@
 import { React, useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-/*import ThemeToggle from './ThemeToggle';*/
 import DarkModeToggle from './DarkModeToggle';
 import { Bars3Icon as MenuIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -78,7 +77,7 @@ const Navbar = () => {
       <Link to="/" className="text-purple-400 font-audiowide font-bold text-xl">KADELCODE</Link>
       
       {/* Mobile Menu Button */}
-      <div className='md:hidden'> {/* Hidden on medium and larger screens */}
+      <div className='md:hidden flex items-center'> {/* Hidden on medium and larger screens */}
         <button onClick={toggleMobileMenu} className='dark:text-white text-black'>
           {isMobileMenuOpen ? (
             <XMarkIcon className='h-8 w-8' /> // Close icon
