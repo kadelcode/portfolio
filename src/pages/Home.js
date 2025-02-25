@@ -24,7 +24,7 @@ const Home = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className=
-      "min-h-screen flex items-center justify-center p-4 relative"
+      "min-h-screen flex items-center justify-center p-4 relative transition-colors duration-300"
     >
       <div
       className="absolute max-h-full inset-0 z-0 mb-0 bg-cover bg-light-mode opacity-30 dark:bg-dark-mode dark:opacity-100"
