@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 backdrop-blur-lg py-4 text-center">
+    <footer className="bg-gray-200 dark:bg-gray-700 backdrop-blur-lg py-4 text-center">
       <div className="container mx-auto">
         <p className="text-sm text-gray-600 dark:text-gray-400">
           &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
