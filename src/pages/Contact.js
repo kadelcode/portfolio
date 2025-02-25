@@ -58,7 +58,7 @@ const Contact = () => {
 
           {/*Email Section */}
           <div className="mb-4">
-            <label className='block text-gray-700 dark:text-gray-300 text-sm md:text-lg font-bold mb-2 htmlFor="email'>
+            <label className='block text-gray-700 dark:text-gray-300 text-sm md:text-lg font-bold mb-2' htmlFor='email'>
               Email
             </label>
             <input
