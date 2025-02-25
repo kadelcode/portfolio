@@ -1,10 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import animationData from "../assets/Lottie_404.json"
 
 const NotFound = () => {
     return (
         <div className="flex flex-col items-center justify-center h-screen text-center">
+            {/* Lottie Animaton */}
+            <motion.div
+              className="w-72 h-72"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+                <Lottie animationData={animationData} loop={true} />
+            </motion.div>
             {/* Animated 404 Text */}
             <motion.h1
               className="text-4xl font-bold text-red-500"
