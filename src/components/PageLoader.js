@@ -22,7 +22,7 @@ const PageLoader = ({ children }) => {
         setTimeout(() => {
             setLoading(false);
             clearTimeout(timeout);
-        }, 500); // Simulating a 2s page load
+        }, 500); // Simulating a 1/2s page load
 
         return () => clearTimeout(timeout);
     }, [location.pathname]); // Runs on route change
