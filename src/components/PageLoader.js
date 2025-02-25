@@ -24,7 +24,7 @@ const PageLoader = ({ children }) => {
         setTimeout(() => {
             setLoading(false);
             clearTimeout(timeout);
-        }, 2000);
+        }, 1500);
 
         return () => clearTimeout(timeout);
     }, [location.pathname]); // Runs on route change
@@ -33,7 +33,9 @@ const PageLoader = ({ children }) => {
         <>
             {loading && (
                 <div className="min-h-screen flex justify-center bg-white dark:bg-gray-800 bg-opacity-75 z-50">
-                    <Lottie animationData={animationData} loop={true}/>
+                    <div className="mt-24">
+                        <Lottie animationData={animationData} loop={true}/>
+                    </div>
                 </div>
             )}
             {error && <div className="text-red-500 text-center mt-4">{error}</div>}
