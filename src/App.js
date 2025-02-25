@@ -9,6 +9,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import PageLoader from './components/PageLoader';
 /*import { linearGradient } from 'framer-motion/client';*/
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <Navbar />
       <div className="flex-grow">
         <AnimatePresence mode="wait">
+          <PageLoader>
           <Routes location={location} key={location.pathname}>
             <Route
               path="/"
@@ -122,6 +124,7 @@ function App() {
               }
             />
           </Routes>
+          </PageLoader>
         </AnimatePresence>
       </div>
       <Footer />
