@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
@@ -12,22 +12,29 @@ const Contact = () => {
   } = useForm();
 
   const form = useRef();
+  const [isSending, setIsSending] = useState(false); // Track loading state
+  const [statusMessage, setStatusMessage] = useState(null);
 
-  const sendEmail = (data) => {
-    emailjs.sendForm(
-      'YOUR_SERVICE_ID',
-      'YOUR_TEMPLATE_ID',
-      form.current,
-      'YOUR_PUBLIC_KEY'
-    ).then(
-      (result) => {
-        console.log(result.text);
-        reset(); // Reset the form after successful submission
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+  const sendEmail = async (data) => {
+    setIsSending(true); // Start loading animation
+    setStatusMessage(null); // Reset status message
+
+    try {
+      const result = await emailjs.sendForm(
+        process.env.REACT_APP_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+      console.log("Success:", result.text);
+      setStatusMessage({ type: 'success', text: 'Message sent successfully!'})
+      reset();
+    } catch (error) {
+      console.error("Error", error.text);
+      setStatusMessage({ type: 'error', text: 'Failed to send message. Please try again.'})
+    } finally {
+      setIsSending(false); // Stop loading animation
+    }
   };
 
   return (
@@ -43,7 +50,7 @@ const Contact = () => {
         </h2>
         <form ref={form} onSubmit={handleSubmit(sendEmail)} className='max-w-md mx-auto'>
           <div className='mb-4'>
-            <label className='block text-gray-700 dark:text-gray-300 text-sm md:text-lg font-bold mb-2'>
+            <label className='block text-gray-700 dark:text-gray-300 text-sm md:text-lg font-bold mb-2' htmlFor='name'>
               Name
             </label>
             <input
@@ -52,6 +59,7 @@ const Contact = () => {
             id='name'
             type='text'
             placeholder='Your Name'
+            autoComplete='name'
             />
             {errors.name && <p className="text-red-500 text-xs italic">{errors.name.message}</p>}
           </div>
@@ -73,6 +81,7 @@ const Contact = () => {
               id='email'
               type='email'
               placeholder='Your Email'
+              autoComplete='email'
             />
             {errors.email && <p className='text-red-500 text-xs italic'>{errors.email.message}</p>}
           </div>
@@ -89,16 +98,52 @@ const Contact = () => {
               placeholder='Your Message'
               rows='5'
             />
-            {errors.message && <p className='text-red-500 text-xs italic'>{errors.message}</p>}
+            {errors.message && <p className='text-red-500 text-xs italic'>{errors.message.message}</p>}
           </div>
+
+          {/* Status Message */}
+          {statusMessage && (
+            <p
+              className={`text center text-sm font-medium mb-4 ${
+                statusMessage.type === 'success' ? 'text-green-500' : 'text-red-500'
+              }`}
+            >
+              {statusMessage.text}
+            </p>
+          )}
           
           {/*Send message div*/}
           <div className='flex items-center justify-between'>
             <button
-              className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+              className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center gap-2'
               type='submit'
+              disabled={isSending} // Disable button while sending
             >
-                Send Message
+                {isSending ? (
+                  <>
+                    <svg
+                      className='animate-spin h-5 w-5 text-white'
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                    >
+                      <circle
+                        className='opacity-25'
+                        cx='12'
+                        cy='12'
+                        r='10'
+                        stroke='currentColor'
+                        strokeWidth='4'
+                      ></circle>
+                      <path
+                        className='opacity-75'
+                        fill='currentColor'
+                        d='M4 12a8 8 0 018-8v8H4z'
+                      ></path>
+                    </svg>
+                    <span>Sending...</span>
+                  </>
+                  ) : 'Send Message'}
               </button>
           </div>
         </form>
