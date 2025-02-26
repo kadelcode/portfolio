@@ -32,9 +32,33 @@ const ProjectDetail = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen p-4"
+      className="min-h-screen py-12 bg-gray-100 dark:bg-gray-800"
     >
-      <h2 className="text-3xl font-bold mb-4">Project Details: {slug}</h2>
+      <div className='container mx-auto'>
+        <h2 className="text-3xl font-bold mb-4 text-dark dark:text-white">{project.title}</h2>
+        <img src={project.imageUrl} alt={project.title} className='w-full rounded-lg mb-6' />
+        <p className='text-gray-600 dark:text-gray-400 mb-4'>{project.description}</p>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.technologies.map((tech) => (
+            <span key={tech} className="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 py-1 px-2 rounded-full text-sm">
+              {tech}
+            </span>
+          ))}
+        </div>
+        {project.liveUrl && (
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className='inline-block bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mr-4'>
+            Live Demo
+          </a>
+        )}
+        {project.githubUrl && (
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className='inline-block bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mr-4'>
+            Github
+          </a>
+        )}
+        <Link to="/projects" className="block mt-6 text-blue-500 hover:underline">
+          Back to Projects
+        </Link>
+      </div>
       {/* Display project details */}
     </motion.div>
   );
