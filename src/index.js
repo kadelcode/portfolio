@@ -9,7 +9,7 @@ const hidePreloader = () => {
 
   if (preloader) {
     preloader.style.opacity = "0"; // Smooth fade out
-    setTimeout(() => preloader.remove(), 2500); // Remove after animation
+    setTimeout(() => preloader.remove(), 500); // Remove after animation
   }
 };
 
