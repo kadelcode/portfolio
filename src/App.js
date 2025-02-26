@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="font-poppins flex flex-col min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800">
       <Navbar />
-      <div className="flex-grow">
+      <div className="flex-grow pt-16">
         <AnimatePresence mode="wait">
           <PageLoader>
           <Routes location={location} key={location.pathname}>
