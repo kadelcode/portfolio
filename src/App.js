@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import PageLoader from './components/PageLoader';
 import NotFound from './pages/NotFound'
 import SplashScreen from './components/SplashScreen';
+import ScrollToTop from './components/ScrollToTop';
 /*import Preloader from './components/Preloader';*/
 /*import { linearGradient } from 'framer-motion/client';*/
 
@@ -58,93 +59,95 @@ function App() {
     <div className="font-poppins flex flex-col min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800">
       <Navbar />
       <div className="flex-grow pt-16">
-        <AnimatePresence mode="wait">
-          <PageLoader>
-          <Routes location={location} key={location.pathname}>
-            <Route
-              path="/"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                >
-                  <Home />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                >
-                  <About />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                >
-                  <Projects />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/projects/:slug"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                >
-                  <ProjectDetail />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/skills"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                >
-                  <Skills />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <motion.div
-                  variants={pageVariants}
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                >
-                  <Contact />
-                </motion.div>
-              }
-            />
+        <ScrollToTop>
+          <AnimatePresence mode="wait">
+            <PageLoader>
+              <Routes location={location} key={location.pathname}>
+                <Route
+                  path="/"
+                  element={
+                    <motion.div
+                      variants={pageVariants}
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                    >
+                      <Home />
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/about"
+                  element={
+                    <motion.div
+                      variants={pageVariants}
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                    >
+                      <About />
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/projects"
+                  element={
+                    <motion.div
+                      variants={pageVariants}
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                    >
+                      <Projects />
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/projects/:slug"
+                  element={
+                    <motion.div
+                      variants={pageVariants}
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                    >
+                      <ProjectDetail />
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/skills"
+                  element={
+                    <motion.div
+                      variants={pageVariants}
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                    >
+                      <Skills />
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/contact"
+                  element={
+                    <motion.div
+                      variants={pageVariants}
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                    >
+                      <Contact />
+                    </motion.div>
+                  }
+                />
 
-            {/* Catch-all route for 404 page */}
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-          </PageLoader>
-        </AnimatePresence>
+                {/* Catch-all route for 404 page */}
+                <Route path='*' element={<NotFound />} />
+              </Routes>
+            </PageLoader>
+          </AnimatePresence>
+        </ScrollToTop>
       </div>
       <Footer />
     </div>
