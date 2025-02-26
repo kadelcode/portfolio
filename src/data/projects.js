@@ -1,5 +1,3 @@
-import { Description } from "@headlessui/react";
-
 const projects = [
     {
         slug: 'project-1',
@@ -17,6 +15,15 @@ const projects = [
         description: 'A brief description of Project 2.',
         technologies: ['Vue.js', 'Firebase'],
         liveUrl: 'https://project2.com',
+        githubUrl: 'https://github.com/kadelcode/project2',
+    },
+
+    {
+        slug: 'project-3',
+        title: 'Project 3 Title',
+        description: 'A brief description of Project 3.',
+        technologies: ['React', 'TailwindCSS', 'Django'],
+        liveUrl: 'https://project3.com',
         githubUrl: 'https://github.com/kadelcode/project2',
     },
 
