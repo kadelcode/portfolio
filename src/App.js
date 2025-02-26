@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion'; // Import motion
 import Navbar from './components/Navbar';
@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import PageLoader from './components/PageLoader';
 import NotFound from './pages/NotFound'
+import SplashScreen from './components/SplashScreen';
 /*import Preloader from './components/Preloader';*/
 /*import { linearGradient } from 'framer-motion/client';*/
 
@@ -151,7 +152,11 @@ function App() {
 }
 
 function RootApp() {
-  return (
+  const [showSplash, setShowSplash] = useState(true);
+  
+  return showSplash ? (
+    <SplashScreen onFinish={() => setShowSplash(false)} />
+  ) : (
     <Router>
         <App />
     </Router>
