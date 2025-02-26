@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion'; // Import motion
 import Navbar from './components/Navbar';
@@ -11,10 +11,12 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import PageLoader from './components/PageLoader';
 import NotFound from './pages/NotFound'
+import Preloader from './components/Preloader';
 /*import { linearGradient } from 'framer-motion/client';*/
 
 function App() {
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
 
   const pageVariants = {
     initial: {
@@ -38,6 +40,18 @@ function App() {
       },
     },
   };
+
+  useEffect(() => {
+    // Simulate a 2.5 second loading time
+    const timer = setTimeout(() => setLoading(false), 2500)
+
+    // Clear timeout on unmount
+    return () => clearTimeout(timer);
+  }, [])
+
+  if (loading) {
+    return <Preloader />; // Show prelaoder while loading
+  }
 
   return (
     <div className="font-poppins flex flex-col min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800">
