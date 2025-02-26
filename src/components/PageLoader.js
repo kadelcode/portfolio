@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 /*import Spinner from "./Spinner";*/
-import animationData from "../assets/lottie_cublic_spinner.json";
+import animationData from "../assets/lottie_cubic_spinner.json";
 import Lottie from "lottie-react";
 
 
