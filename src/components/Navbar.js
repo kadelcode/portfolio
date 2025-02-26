@@ -71,7 +71,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen, navbarHeight]); // Add navbarHeight as a dependency
 
   return (
-    <nav className="z-40 fixed top-0 left-0 w-full text-xl backdrop-blur-md text-black dark:text-white dark:bg-gray-800 transition-colors duration-300 p-4 flex justify-between items-center"
+    <nav className="z-40 fixed top-0 left-0 w-full text-xl backdrop-blur-lg dark:backdrop-blur-2xl text-black dark:text-white dark:bg-gray-800 transition-colors duration-300 p-4 flex justify-between items-center"
     ref={navbarRef}
     >
       <Link to="/" className="text-purple-400 font-audiowide font-bold text-xl">KADELCODE</Link>
