@@ -1,40 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-/*import Spinner from "./Spinner";*/
+import { useLocation, useNavigationType } from "react-router-dom";
 import animationData from "../assets/lottie_cubic_spinner.json";
 import Lottie from "lottie-react";
 
-
 const PageLoader = ({ children }) => {
     const location = useLocation();
+    const navigationType = useNavigationType(); // Detects navigation type (PUSH, POP, REPLACE)
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
     useEffect(() => {
+        if (navigationType !== "PUSH") return; // Only show loader on user-initiated navigation
+
         setLoading(true);
         setError("");
 
-        // Timeout to handle slow network cases
         const timeout = setTimeout(() => {
             setError("This page is taking too long to load. Please check your network.");
             setLoading(false);
-        }, 10000) // 10 seconds timeout
+        }, 10000); // 10 seconds timeout
 
-        // Simulating network delay (replace with actual API call or fetching logic)
         setTimeout(() => {
             setLoading(false);
             clearTimeout(timeout);
         }, 1500);
 
         return () => clearTimeout(timeout);
-    }, [location.pathname]); // Runs on route change
+    }, [location.pathname, navigationType]);
 
     return (
         <>
             {loading && (
                 <div className="min-h-screen flex justify-center bg-white dark:bg-gray-800 bg-opacity-75 z-50">
                     <div className="mt-24">
-                        <Lottie animationData={animationData} loop={true}/>
+                        <Lottie animationData={animationData} loop={true} />
                     </div>
                 </div>
             )}
