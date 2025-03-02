@@ -23,7 +23,7 @@ const PageLoader = ({ children }) => {
         setTimeout(() => {
             setLoading(false);
             clearTimeout(timeout);
-        }, 1500);
+        }, 1000);
 
         return () => clearTimeout(timeout);
     }, [location.pathname, navigationType]);
