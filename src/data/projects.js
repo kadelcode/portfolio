@@ -1,12 +1,19 @@
 const projects = [
     {
-        slug: 'project-1',
-        title: 'Project 1 Title',
-        description: 'A brief description of Project 1.',
+        slug: 'saas-landing-page',
+        title: 'A SaaS Landing Page',
+        description: 'A Software as a Service landing page design.',
         imageUrl: '/images/project-1.jpg',
-        technologies: ['React', 'Tailwind CSS', 'Node.js'],
+        technologies: ['React', 'Tailwind CSS', 'Next.js'],
+        features: [
+            'f1',
+            'f2',
+            'f3',
+            'f4',
+            'f5'
+        ],
         liveUrl: 'https://project1.com',
-        githubUrl: 'https://github.com/kadelcode/project1',
+        githubUrl: 'https://github.com/kadelcode/saas-landing-page',
     },
 
     {

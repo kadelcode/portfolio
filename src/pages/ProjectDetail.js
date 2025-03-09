@@ -15,9 +15,9 @@ const ProjectDetail = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='min-h-screen py-12 bg-gray-100 dark:bg-gray-800'
+        className='min-h-screen py-12 bg-gray-100 dark:bg-gray-800 text-2xl dark:text-white flex items-center justify-center'
       >
-        <div className='container mx-auto'>
+        <div className='mx-auto'>
           <p>Project not found.</p>
           <Link to="/projects" className="text-blue-500 hover:underline">
             Back to Projects
@@ -55,6 +55,17 @@ const ProjectDetail = () => {
             Github
           </a>
         )}
+        {/* Key features of the project */}
+        {project.features &&
+        <div>
+          <h4>Features</h4>
+          <ul>
+            {project.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
+            ))}
+          </ul>
+        </div>
+        }
         <Link to="/projects" className="block mt-6 text-blue-500 hover:underline">
           Back to Projects
         </Link>
