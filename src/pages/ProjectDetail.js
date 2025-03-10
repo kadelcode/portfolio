@@ -57,11 +57,11 @@ const ProjectDetail = () => {
         )}
         {/* Key features of the project */}
         {project.features &&
-        <div>
-          <h4>Features</h4>
+        <div className='mt-5 dark:text-white'>
+          <h2>Key Features</h2>
           <ul>
             {project.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
+              <li key={index}><p>{feature}</p></li>
             ))}
           </ul>
         </div>
