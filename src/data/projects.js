@@ -16,7 +16,7 @@ const projects = [
             'SEO Optimized - Next.js metadata API for better rankings.',
             'Dark/Light Mode Support - Improves UX with next-themes.'
         ],
-        liveUrl: 'https://project1.com',
+        liveUrl: 'https://litai.vercel.app/',
         githubUrl: 'https://github.com/kadelcode/saas-landing-page',
     },
 
