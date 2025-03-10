@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import projects from '../data/projects';
+import { CheckCircleIcon } from '@heroicons/react/24/outline';
 
 const ProjectDetail = () => {
   // Fetch project details based on slug from your data source
@@ -58,10 +59,13 @@ const ProjectDetail = () => {
         {/* Key features of the project */}
         {project.features &&
         <div className='mt-5 dark:text-white'>
-          <h2>Key Features</h2>
+          <h2 className='text-2xl font-bold mb-5'>Key Features</h2>
           <ul>
             {project.features.map((feature, index) => (
-              <li key={index}><p>{feature}</p></li>
+              <li className='mb-6 flex items-center gap-2' key={index}>
+                <CheckCircleIcon width={30} height={30} className='text-purple-500' />
+                {feature}
+              </li>
             ))}
           </ul>
         </div>
