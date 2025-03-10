@@ -12,7 +12,7 @@ const projects = [
             'Testimonials - Social proof to build credibilty.',
             'Call to Action (CTA) - Encourages users to sign up or contact you.',
             'Responsive UI - Works well on both mobile and desktop.',
-            'Animations & Interactions - Using `Frame Motion` for smooth animations',
+            'Animations & Interactions - Using Framer Motion for smooth animations',
             'SEO Optimized - Next.js metadata API for better rankings.',
             'Dark/Light Mode Support - Improves UX with next-themes.'
         ],

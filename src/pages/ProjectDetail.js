@@ -35,7 +35,7 @@ const ProjectDetail = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen py-12 bg-gray-100 dark:bg-gray-800"
     >
-      <div className='container mx-auto'>
+      <div className='container mx-auto px-4'>
         <h2 className="text-3xl font-bold mb-4 text-dark dark:text-white">{project.title}</h2>
         <img src={project.imageUrl} alt={project.title} className='w-full rounded-lg mb-6' />
         <p className='text-gray-600 dark:text-gray-400 mb-4'>{project.description}</p>
@@ -62,9 +62,9 @@ const ProjectDetail = () => {
           <h2 className='text-2xl font-bold mb-5'>Key Features</h2>
           <ul>
             {project.features.map((feature, index) => (
-              <li className='mb-6 flex items-center gap-2' key={index}>
-                <CheckCircleIcon width={30} height={30} className='text-purple-500' />
-                {feature}
+              <li className='mb-6 flex items-center gap-5' key={index}>
+                <CheckCircleIcon width="1.875rem" height="1.875rem" className='text-purple-500 flex-shrink-0 flex-grow-0' />
+                <span>{feature}</span>
               </li>
             ))}
           </ul>
