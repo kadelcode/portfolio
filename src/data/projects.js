@@ -4,7 +4,7 @@ const projects = [
         title: 'AI Chat Application',
         description: 'A real-time ai-powered chat application.',
         imageUrl: '/images/novachat_landing_page.png',
-        technologies: ['React', 'Next.js', 'Firebase'],
+        technologies: ['TypeScript', 'React', 'Next.js', 'TailwindCSS', 'Firebase'],
         features: [
             'Authentication (Google/Auth Providers via Firebase)',
             'Real-time Chat (Firestore)',
