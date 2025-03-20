@@ -14,8 +14,8 @@ const About = () => {
                 <div className='flex flex-col md:flex-row gap-8'>{/* Flexbox for responsiveness */}
                     <div className='md:w-1/3'> {/* Image container */}
                         <img
-                          src="/images/profile-picture.jpg"
-                          alt='Ayodele'
+                          src="/images/kadel-avatar.jpeg"
+                          alt="Kadel's Avatar"
                           className='rounded-lg shadow-lg mx-auto md:mx-0' // Centered on smaller screens
                         />
                     </div>
@@ -65,7 +65,7 @@ const About = () => {
                         exit={{ opacity: 0, x: -100 }}
                         transition={{ duration: 3}}
                         className='text-gray-800 dark:text-gray-300 leading-relaxed'>
-                        I’m currently expanding my knowledge in DevOps, AWS, and networking fundamentals to become a 
+                        I’m currently expanding my knowledge in DevOps, AWS, Web3 and networking fundamentals to become a 
                         well-rounded engineer. My goal is to become one of the best full-stack developers 
                         in the world by continuously learning, building impactful projects, and contributing to 
                         open-source communities.
@@ -76,7 +76,7 @@ const About = () => {
                         animate={{ y: 0 }}
                         transition={{ ease: 'easeIn', duration: 2}}
                         className='text-gray-800 dark:text-gray-300 leading-relaxed'>
-                        When I’m not coding, I enjoy gaming, exploring new technologies, mentoring aspiring developers, 
+                        When I’m not coding, I enjoy gaming and exploring new technologies, mentoring aspiring developers, 
                         and writing about my learning journey.
                         </motion.p><br />
                     </div>
