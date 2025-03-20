@@ -76,7 +76,7 @@ const About = () => {
                         animate={{ y: 0 }}
                         transition={{ ease: 'easeIn', duration: 2}}
                         className='text-gray-800 dark:text-gray-300 leading-relaxed'>
-                        When I’m not coding, I enjoy gaming and exploring new technologies, mentoring aspiring developers, 
+                        When I’m not coding, I enjoy gaming, exploring new technologies, mentoring aspiring developers, 
                         and writing about my learning journey.
                         </motion.p><br />
                     </div>
