@@ -4,7 +4,7 @@ const projects = [
         title: 'AI Chat Application',
         description: 'A real-time ai-powered chat application.',
         imageUrl: '/images/novachat_landing_page.png',
-        technologies: ['TypeScript', 'React', 'Next.js', 'TailwindCSS', 'Firebase'],
+        technologies: ['React', 'Next.js', 'TailwindCSS', 'Firebase'],
         features: [
             'Authentication (Google/Auth Providers via Firebase)',
             'Real-time Chat (Firestore)',
@@ -36,12 +36,20 @@ const projects = [
     },
 
     {
-        slug: 'project-3',
-        title: 'Project 3 Title',
-        description: 'A brief description of Project 3.',
-        technologies: ['React', 'TailwindCSS', 'Django'],
-        liveUrl: 'https://project3.com',
-        githubUrl: 'https://github.com/kadelcode/project2',
+        slug: 'learning-platform',
+        title: 'Online Learning Platform',
+        description: 'An online educational platform for business owners.',
+        imageUrl: '/images/edubridge_homepage.png',
+        technologies: ['HTML', 'CSS', 'JS', 'AJAX', 'Django'],
+        features: [
+            'User-Friendly Design',
+            'User Management',
+            'High-Quality Educational Content',
+            'Community Features',
+            'Content Management System',
+        ],
+        liveUrl: 'https://edubridge.onrender.com',
+        githubUrl: 'https://github.com/ouredubridge/edutech',
     },
 
     // more projects here
