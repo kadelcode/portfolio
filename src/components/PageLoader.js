@@ -31,8 +31,8 @@ const PageLoader = ({ children }) => {
     return (
         <>
             {loading && (
-                <div className="min-h-screen flex justify-center bg-white dark:bg-gray-800 bg-opacity-75 z-50">
-                    <div className="mt-24">
+                <div className="h-[calc(100vh-4rem)] overflow-hidden flex justify-center items-center bg-white dark:bg-gray-800 bg-opacity-75 z-50">
+                    <div>
                         <Lottie animationData={animationData} loop={true} />
                     </div>
                 </div>
