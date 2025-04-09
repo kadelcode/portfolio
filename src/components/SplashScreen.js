@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Lottie from "lottie-react";
-import codeAnimation from '../assets/lottie_code.json';
+// import Lottie from "lottie-react";
+// import codeAnimation from '../assets/lottie_code.json';
+import SplashText from "./SplashText";
 
 
 const SplashScreen = ({ onFinish }) => {
@@ -14,8 +15,9 @@ const SplashScreen = ({ onFinish }) => {
     }, [onFinish]);
 
     return isVisible ? (
-        <div className="fixed inset-0 flex items-center justify-center bg-white z-50 transition-opacity duration-500">
-            <Lottie animationData={codeAnimation} loop={true} />
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 z-50 transition-opacity duration-500 dark:bg-gray-800">
+            {/*<Lottie animationData={codeAnimation} loop={true} />*/}
+            <SplashText />
         </div>
     ) : null;
 };
