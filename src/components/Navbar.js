@@ -92,7 +92,7 @@ const Navbar = () => {
         <NavLink 
           to="/about" 
           className={({ isActive }) =>
-            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+            isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
           }
           end // Add 'end' prop for exact matching of the root path
         >
@@ -102,7 +102,7 @@ const Navbar = () => {
         <NavLink 
           to="/projects" 
           className={({ isActive }) =>
-            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+            isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
           }
           end
         >
@@ -113,7 +113,7 @@ const Navbar = () => {
         <NavLink 
           to="/skills" 
           className={({ isActive }) =>
-            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+            isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
           }
           end
         >
@@ -123,7 +123,7 @@ const Navbar = () => {
         <NavLink 
           to="/contact" 
           className={({ isActive }) =>
-            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+            isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
           }
           end
         >
@@ -148,7 +148,7 @@ const Navbar = () => {
             <NavLink 
               to="/about" 
               className={({ isActive }) =>
-                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+                isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
               end
             > {/* Close on link click */}
@@ -158,7 +158,7 @@ const Navbar = () => {
             <NavLink 
               to="/projects" 
               className={({ isActive }) =>
-                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+                isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
               end
             > {/* Close on link click */}
@@ -168,7 +168,7 @@ const Navbar = () => {
             <NavLink 
               to="/skills" 
               className={({ isActive }) =>
-                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+                isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
               end
             > {/* Close on link click */}
@@ -178,7 +178,7 @@ const Navbar = () => {
             <NavLink 
               to="/contact" 
               className={({ isActive }) =>
-                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+                isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
               end
             > {/* Close on link click */}
