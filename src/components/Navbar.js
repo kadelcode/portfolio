@@ -150,6 +150,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
+              onClick={() => setIsMobileMenuOpen(false)}
               end
             > {/* Close on link click */}
               About
@@ -160,6 +161,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
+              onClick={() => setIsMobileMenuOpen(false)}
               end
             > {/* Close on link click */}
               Projects
@@ -170,6 +172,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
+              onClick={() => setIsMobileMenuOpen(false)}
               end
             > {/* Close on link click */}
               Skills
@@ -180,6 +183,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? 'text-purple-400 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
               }
+              onClick={() => setIsMobileMenuOpen(false)}
               end
             > {/* Close on link click */}
               Contact
