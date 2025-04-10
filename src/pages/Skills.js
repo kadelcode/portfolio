@@ -1,61 +1,55 @@
 import React from 'react';
+import { useState } from 'react';
+import skills from '../data/skills';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
-    const skills = [
-        {
-            category: 'Programming Languages',
-            items: [
-                { name: 'C', level: 90, description: '' },
-                { name: 'Python', level: 75, description: '' },
-                { name: 'JavaScript', level: 85, description: ''},
-                { name: 'Java', level: 50, description: ''}
-            ],
-        },
-        {
-            category: 'Framework/Libraries',
-            items: [
-                { name: 'Django', level: 95, description: 'A python framework'},
-                { name: 'Flask', level: 70, description: ''},
-                { name: 'React', level: 95, description: ''},
-                { name: 'Node.js', level: 80, description: ''},
-                { name: 'Express.js', level: 80, description: ''},
-            ]
-        },
-        {
-            category: 'Version Control',
-            items: [
-                { name: 'Git', level: 90, description: ''},
-                { name: 'GitHub', level: 95, description: ''},
-                { name: 'GitLab', level: 80, description: ''},
-            ]
-        },
-        {
-            category: 'Database Management',
-            items: [
-                { name: 'PostgreSQL', level: 95, description: ''},
-                { name: 'MongoDB', level: 80, description: ''},
-                { name: 'MySQL', level: 80, description: ''},
-            ]
-        },
-        {
-            category: 'DevOps & Cloud',
-            items: [
-                { name: 'AWS', level: 60, description: ''},
-                { name: 'GCP', level: 40, description: ''},
-                { name: 'Render', level: 90, description: ''},
-                { name: 'Docker', level: 40, description: ''},
-                { name: 'Kubernetes', level: 40, description: ''},
-                { name: 'GitHub Actions', level: 90, description: ''},
-            ]
+    // State to keep track of selected categories
+    const [selectedCategories, setSelectedCategories] = useState([]);
+
+    // Extract unique categories from the skills data
+    const allCategories = [...new Set(skills.map((skill) => skill.category))];
+
+    // Function to toggle the selection of a category
+    const toggleCategory = (category) => {
+        if (selectedCategories.includes(category)) {
+            // If the category is already selected, remove it
+            setSelectedCategories(selectedCategories.filter((c) => c !== category));
+        } else {
+            // If the category is not selected, add it
+            setSelectedCategories([...selectedCategories, category]);
         }
-    ]
+    };
+
+    // Filter skills based on selected categories
+    const filteredSkills = selectedCategories.length
+      ? skills.filter((skill) => selectedCategories.includes(skill.category))
+      : skills;
 
     return (
         <section className='py-12 bg-gray-100 dark:bg-gray-800 dark:text-gray-50 transition-colors duration-300 min-h-screen'>
             <div className='mx-5 sm:mx-8 md:mx-auto box-border'>
                 <h2 className='text-3xl font-bold mb-6 text-center'>My Skills</h2>
 
-                {skills.map((category) => (
+                {/* Filter Tags Section */}
+                <div className="flex flex-wrap gap-2 mb-6 justify-center">
+                    {allCategories.map((category) => (
+                        <button
+                          key={category}
+                          // Dynamic class names based on selection state
+                          className={`py-1 px-3 rounded-full text-sm ${
+                            selectedCategories.includes(category)
+                              ? 'bg-purple-500 dark:bg-purple-400 text-white'
+                              : 'bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300'
+                          }`}
+                          onClick={() => toggleCategory(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+
+                {filteredSkills.map((category) => (
                     <div key={category.category} className='text-purple-500 dark:text-purple-400 mb-8 md:mx-7'> {/* Added margin bottom for spacing */}
                         <h3 className='text-2xl font-semibold mb-4'>{category.category}</h3> {/* Category title */}
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 box-border'>
