@@ -15,7 +15,7 @@ const SplashScreen = ({ onFinish }) => {
     }, [onFinish]);
 
     return isVisible ? (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 z-50 transition-opacity duration-500 dark:bg-gray-800">
+        <div className="fixed inset-0 flex items-center justify-center bg-slate-950 z-50 transition-opacity duration-500 dark:bg-gray-800">
             {/*<Lottie animationData={codeAnimation} loop={true} />*/}
             <SplashText />
         </div>
