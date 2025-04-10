@@ -50,7 +50,14 @@ const Skills = () => {
                 </div>
 
                 {filteredSkills.map((category) => (
-                    <div key={category.category} className='text-purple-500 dark:text-purple-400 mb-8 md:mx-7'> {/* Added margin bottom for spacing */}
+                    <motion.div 
+                      // Animation properties for the component
+                      initial={{ opacity: 0, y: 100 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      key={category.category} 
+                      className='text-purple-500 dark:text-purple-400 mb-8 md:mx-7'
+                    > {/* Added margin bottom for spacing */}
                         <h3 className='text-2xl font-semibold mb-4'>{category.category}</h3> {/* Category title */}
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 box-border'>
                             {category.items.map((skill) => (
@@ -68,7 +75,7 @@ const Skills = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
