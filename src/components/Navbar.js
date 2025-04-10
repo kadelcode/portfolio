@@ -1,5 +1,5 @@
 import { React, useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import DarkModeToggle from './DarkModeToggle';
 import { Bars3Icon as MenuIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -89,18 +89,47 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-7 text-black dark:text-white">
-        <Link to="/about" className='hover:text-gray-800 dark:hover:text-gray-300'>
+        <NavLink 
+          to="/about" 
+          className={({ isActive }) =>
+            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+          }
+          end // Add 'end' prop for exact matching of the root path
+        >
           About
-        </Link>
-        <Link to="/projects" className='hover:text-gray-800 dark:hover:text-gray-300'>
+        </NavLink>
+        
+        <NavLink 
+          to="/projects" 
+          className={({ isActive }) =>
+            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+          }
+          end
+        >
           Projects
-        </Link>
-        <Link to="/skills" className='hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-300'>
+        </NavLink>
+
+
+        <NavLink 
+          to="/skills" 
+          className={({ isActive }) =>
+            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+          }
+          end
+        >
           Skills
-        </Link>
-        <Link to="/contact" className='hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-300'>
+        </NavLink>
+
+        <NavLink 
+          to="/contact" 
+          className={({ isActive }) =>
+            isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+          }
+          end
+        >
           Contact
-        </Link>
+        </NavLink>
+
         <DarkModeToggle />
       </div>
 
@@ -116,18 +145,46 @@ const Navbar = () => {
             animate="open" // Animate to open
             exit="closed" // Animation on exit
           >
-            <Link to="/about" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+            <NavLink 
+              to="/about" 
+              className={({ isActive }) =>
+                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+              }
+              end
+            > {/* Close on link click */}
               About
-            </Link>
-            <Link to="/projects" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+            </NavLink>
+
+            <NavLink 
+              to="/projects" 
+              className={({ isActive }) =>
+                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+              }
+              end
+            > {/* Close on link click */}
               Projects
-            </Link>
-            <Link to="/skills" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+            </NavLink>
+
+            <NavLink 
+              to="/skills" 
+              className={({ isActive }) =>
+                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+              }
+              end
+            > {/* Close on link click */}
               Skills
-            </Link>
-            <Link to="/contact" className='hover:text-gray-800 dark:hover:text-gray-300' onClick={closeMobileMenu}> {/* Close on link click */}
+            </NavLink>
+
+            <NavLink 
+              to="/contact" 
+              className={({ isActive }) =>
+                isActive ? 'text-purple-500 font-bold' : 'hover:text-gray-800 dark:hover:text-gray-300'
+              }
+              end
+            > {/* Close on link click */}
               Contact
-            </Link>
+            </NavLink>
+
             <DarkModeToggle />
           </motion.div>
         )}
