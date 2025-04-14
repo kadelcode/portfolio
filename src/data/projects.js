@@ -1,4 +1,25 @@
 const projects = [
+    // Solar Landing Page (Frontend)
+    {
+        slug: 'solar-landing-page',
+        title: 'Solar Power Landing Page',
+        description: 'A landing page design for a solar company.',
+        imageUrl: '/images/projects/sunspark_landing_page.png',
+        technologies: ['React', 'Next.js', 'TailwindCSS', 'TypeScript'],
+        features: [
+            'Animated Splash Screen',
+            'Hero Section',
+            'Benefits Section',
+            'How It Works Section',
+            'Services Offered',
+            'Testimonials Section',
+            'Contact Section',
+            'Responsive Design',
+            'Fast & SEO-Optimized',
+        ],
+        liveUrl: 'https://sunspark.vercel.app',
+        githubUrl: 'https://github.com/kadelcode/solar-landing-page',
+    },
     {
         slug: 'ai-chat-app',
         title: 'AI Chat Application',
