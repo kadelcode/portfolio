@@ -39,7 +39,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 2 }}
-          className="text-md text-justify font-poppins md:text-2xl mt-5 transition-colors duration-300 text-black dark:text-white"
+          className="text-md text-justify font-montserrat md:text-2xl mt-5 transition-colors duration-300 text-black dark:text-white"
         >
           I'm a passionate full stack software engineer who thrives on turning innovative ideas
           into robust, efficient, and elegant solutions. I love building scalable,
