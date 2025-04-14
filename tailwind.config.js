@@ -6,7 +6,8 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins'],
         quicksand: ['Quicksand'],
-        audiowide: ['Audiowide']
+        audiowide: ['Audiowide'],
+        montserrat: ['Montserrat'],
       },
       backgroundImage: {
         "light-mode": "url('../public/images/light-mode-background.jpg')",
