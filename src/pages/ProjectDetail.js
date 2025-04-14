@@ -33,7 +33,7 @@ const ProjectDetail = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen py-12 bg-gray-100 dark:bg-gray-800"
+      className="min-h-screen py-12 bg-gray-100 dark:bg-slate-900"
     >
       <div className='container mx-auto px-4'>
         <h2 className="text-3xl font-bold mb-4 text-dark dark:text-white">{project.title}</h2>
@@ -41,7 +41,7 @@ const ProjectDetail = () => {
         <p className='text-gray-600 dark:text-gray-400 mb-4'>{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-6">
           {project.technologies.map((tech) => (
-            <span key={tech} className="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 py-1 px-2 rounded-full text-sm">
+            <span key={tech} className="bg-gray-200 dark:bg-gray-600 text-slate-950 dark:text-gray-300 py-1 px-2 rounded-full text-sm">
               {tech}
             </span>
           ))}

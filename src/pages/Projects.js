@@ -10,7 +10,7 @@ const Projects = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen py-12 bg-gray-100 dark:bg-gray-800"
+      className="min-h-screen py-12 bg-gray-100 dark:bg-slate-900"
     >
       <div className='mx-8 text-black dark:text-white'>
         <h2 className="text-3xl font-bold mb-6 text-center">My Projects</h2>
@@ -25,7 +25,7 @@ const Projects = () => {
             >
               <motion.div
                 className="bg-white
-                dark:bg-gray-700
+                dark:bg-gray-950
                 shadow-md rounded-lg
                 overflow-hidden"
                 whileHover={{ scale: 1.05 }}

@@ -56,7 +56,7 @@ function App() {
   }*/
 
   return (
-    <div className="font-montserrat flex flex-col min-h-screen overflow-x-hidden bg-gray-100 dark:bg-gray-800">
+    <div className="font-montserrat flex flex-col min-h-screen overflow-x-hidden bg-gray-100 dark:bg-slate-950">
       <Navbar />
       <div className="flex-grow pt-16">
         <ScrollToTop>

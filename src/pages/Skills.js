@@ -27,7 +27,7 @@ const Skills = () => {
       : skills;
 
     return (
-        <section className='py-12 bg-gray-100 dark:bg-gray-800 dark:text-gray-50 transition-colors duration-300 min-h-screen'>
+        <section className='py-12 bg-gray-100 dark:bg-slate-900 dark:text-gray-50 transition-colors duration-300 min-h-screen'>
             <div className='mx-5 sm:mx-8 md:mx-auto box-border'>
                 <h2 className='text-3xl font-bold mb-6 text-center'>My Skills</h2>
 

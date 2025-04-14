@@ -7,7 +7,7 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className='min-h-screen py-12 bg-gray-100 dark:bg-gray-800 dark:text-gray-50 transition-colors duration-300' // Added background and padding
+            className='min-h-screen py-12 bg-gray-100 dark:bg-slate-900 dark:text-gray-50 transition-colors duration-300' // Added background and padding
         >
             <div className='mx-4'>
                 <h2 className='text-3xl font-bold mb-6 text-center'>About Me</h2>

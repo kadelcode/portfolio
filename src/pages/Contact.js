@@ -42,7 +42,7 @@ const Contact = () => {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className='min-h-screen py-12 bg-gray-100 dark:bg-gray-800 transition-colors duration-300'
+    className='min-h-screen py-12 bg-gray-100 dark:bg-slate-900 transition-colors duration-300'
     >
       <div className='mx-3'>
         <h2 className='text-3xl text-black dark:text-white font-bold mb-6 text-center'>

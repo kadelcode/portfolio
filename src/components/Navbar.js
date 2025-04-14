@@ -71,7 +71,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen, navbarHeight]); // Add navbarHeight as a dependency
 
   return (
-    <nav className="z-40 h-16 px-3 fixed top-0 left-0 w-full text-xl backdrop-blur-lg dark:backdrop-blur-2xl text-black dark:text-white dark:bg-gray-800 transition-colors duration-300 flex justify-between items-center"
+    <nav className="z-40 h-16 px-3 fixed top-0 left-0 w-full text-xl backdrop-blur-lg dark:backdrop-blur-2xl text-black dark:text-white dark:bg-slate-950 transition-colors duration-300 flex justify-between items-center"
     ref={navbarRef}
     >
       <Link to="/" className="text-purple-400 font-audiowide font-bold text-xl">KADELCODE</Link>
@@ -137,7 +137,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="absolute top-14 left-0 w-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
+            className="absolute top-14 left-0 w-full bg-gray-200 dark:bg-slate-950 transition-colors duration-300 backdrop-blur-3xl p-4 flex flex-col items-center space-y-2 md:hidden"
             ref={dropdownRef} // Ref for the dropdown
             style={{ top: 0 }} // Initial style to avoid flashing
             variants={dropdownVariants} // Add variants
