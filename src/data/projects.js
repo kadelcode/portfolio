@@ -1,4 +1,24 @@
 const projects = [
+    // Fitness Web Application (Frontend)
+    {
+        slug: 'fitness-webapp',
+        title: 'Fitness Web Application',
+        description: 'A modern fitness tracking web app.',
+        imageUrl: '/images/projects/boomfit-db.png',
+        technologies: ['Next.js', 'TailwindCSS', 'NextAuth.js', 'MongoDB'],
+        features: [
+            'Landing Page (Marketing + Onboarding)',
+            'Authentication',
+            'User Dashboard',
+            'Workout Tracking',
+            'Meal Tracking/Nutrition',
+            'Goal Setting',
+            'Community Features',
+            'Settings & Profile',
+        ],
+        liveUrl: 'https://boomfit.vercel.app',
+        githubUrl: 'https://github.com/kadelcode/fitness-app',
+    },
     // Solar Landing Page (Frontend)
     {
         slug: 'solar-landing-page',
