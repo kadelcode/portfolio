@@ -19,6 +19,23 @@ const projects = [
         liveUrl: 'https://boomfit.vercel.app',
         githubUrl: 'https://github.com/kadelcode/fitness-app',
     },
+    // Task Management App (Frontend + Backend)
+    {
+        slug: 'task-management-app',
+        title: 'Task Management App',
+        description: 'A task management web application.',
+        imageUrl: '/images/projects/taskspark-db.png',
+        technologies: ['Next.js', 'Express.js', 'JWT', 'MongoDB'],
+        features: [
+            'Landing Page (Marketing + Onboarding)',
+            'Authentication',
+            'User Dashboard',
+            'Task Management',
+            'Project Management',
+        ],
+        liveUrl: 'https://taskspark.vercel.app',
+        githubUrl: 'https://github.com/kadelcode/task-management-frontend',
+    },
     // Solar Landing Page (Frontend)
     {
         slug: 'solar-landing-page',
