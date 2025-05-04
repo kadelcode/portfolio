@@ -27,7 +27,7 @@ const Home = () => {
       "min-h-screen flex items-center justify-center p-4 relative transition-colors duration-300"
     >
       <div
-      className="absolute max-h-full inset-0 z-0 mb-0 bg-cover bg-light-mode opacity-30 dark:bg-dark-mode dark:opacity-100"
+      className="absolute max-h-full inset-0 z-0 mb-0 bg-cover bg-light-mode opacity-20 dark:bg-dark-mode dark:opacity-30"
       style={{
         backgroundSize: 'cover',
       }}
