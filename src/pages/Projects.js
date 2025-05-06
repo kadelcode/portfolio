@@ -26,7 +26,7 @@ const Projects = () => {
               <motion.div
                 className="bg-white
                 dark:bg-gray-950
-                shadow-md rounded-lg
+                shadow-md rounded-lg h-full
                 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
