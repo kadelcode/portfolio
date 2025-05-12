@@ -1,4 +1,23 @@
 const projects = [
+    // Authentication and Authorization (Backend)
+    {
+        slug: 'auth-backend',
+        title: 'Authentication and Authorization Microservice',
+        description: 'A microservice for user authentication and authorization.',
+        imageUrl: '/images/projects/auth-backend.png',
+        technologies: ['Express.js', 'MongoDB', 'JWT', 'Postman'],
+        features: [
+            'User Registration',
+            'User Login',
+            'Password Reset',
+            'Email Verification',
+            'Role-Based Access Control',
+            'Token-Based Authentication',
+        ],
+        liveUrl: 'https://auth-backend.onrender.com',
+        githubUrl: 'https://github.com/kadelcode/auth-service',
+    },
+
     // Fitness Web Application (Frontend)
     {
         slug: 'fitness-webapp',
