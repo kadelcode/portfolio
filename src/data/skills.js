@@ -23,28 +23,35 @@ const skills = [
     {
         category: 'Version Control',
         items: [
-            { name: 'Git', level: 90, description: ''},
-            { name: 'GitHub', level: 95, description: ''},
-            { name: 'GitLab', level: 80, description: ''},
+            { name: 'Git', level: 90, description: 'A distributed version control system for tracking changes in source code'},
+            { name: 'GitHub', level: 95, description: 'A web-based platform for version control and collaboration'},
+            { name: 'GitLab', level: 80, description: 'A web-based DevOps lifecycle tool that provides a Git repository manager'},
+            { name: 'Bitbucket', level: 80, description: 'A web-based version control repository hosting service'},
         ]
     },
     {
         category: 'Database Management',
         items: [
-            { name: 'PostgreSQL', level: 95, description: ''},
-            { name: 'MongoDB', level: 80, description: ''},
-            { name: 'MySQL', level: 80, description: ''},
+            { name: 'PostgreSQL', level: 95, description: 'A powerful, open-source object-relational database system'},
+            { name: 'SQLite', level: 90, description: 'A C library that provides a lightweight disk-based database'},
+            { name: 'MongoDB', level: 80, description: 'A NoSQL database that uses a document-oriented data model'},
+            { name: 'Redis', level: 70, description: 'An open-source, in-memory data structure store'},
+            { name: 'MySQL', level: 80, description: 'A widely used open-source relational database management system'},
+            { name: 'Firebase', level: 70, description: 'A platform developed by Google for creating mobile and web applications'},
         ]
     },
     {
         category: 'DevOps & Cloud',
         items: [
-            { name: 'AWS', level: 60, description: ''},
-            { name: 'GCP', level: 40, description: ''},
-            { name: 'Render', level: 90, description: ''},
-            { name: 'Docker', level: 40, description: ''},
-            { name: 'Kubernetes', level: 40, description: ''},
-            { name: 'GitHub Actions', level: 90, description: ''},
+            { name: 'AWS', level: 60, description: 'Amazon Web Services, a subsidiary of Amazon providing on-demand cloud computing platforms'},
+            { name: 'GCP', level: 40, description: 'Google Cloud Platform, a suite of cloud computing services that runs on the same infrastructure that Google uses internally'},
+            { name: 'Render', level: 90, description: 'A cloud platform for hosting web applications and services'},
+            { name: 'Railway', level: 90, description: 'A cloud platform for deploying and managing applications'},
+            { name: 'Docker', level: 40, description: 'An open platform for developing, shipping, and running applications'},
+            { name: 'Kubernetes', level: 40, description: 'An open-source system for automating the deployment, scaling, and management of containerized applications'},
+            { name: 'GitHub Actions', level: 90, description: 'A CI/CD feature of GitHub that allows you to automate your workflow'},
+            { name: 'Vercel', level: 90, description: 'A cloud platform for static sites and serverless functions'},
+            { name: 'Netlify', level: 90, description: 'A cloud platform for hosting static websites and web applications'},
         ]
     }
 ]
