@@ -14,7 +14,7 @@ const projects = [
             'Role-Based Access Control',
             'Token-Based Authentication',
         ],
-        liveUrl: 'https://auth-backend.onrender.com',
+        liveUrl: 'https://auth-service-production-d511.up.railway.app/api/v1/health',
         githubUrl: 'https://github.com/kadelcode/auth-service',
     },
 
