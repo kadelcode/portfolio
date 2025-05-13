@@ -52,8 +52,8 @@ const Skills = () => {
                 {filteredSkills.map((category) => (
                     <motion.div 
                       // Animation properties for the component
-                      initial={{ opacity: 0, y: 100 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       key={category.category} 
                       className='text-purple-500 dark:text-purple-400 mb-8 md:mx-7'
