@@ -18,7 +18,7 @@ const Footer = () => {
             />
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/ayodele-kadiri-8bb64a23a/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-blue-500">
+          <a href="https://www.linkedin.com/in/ayodele-kadiri-5b3085366/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-blue-500">
             <img 
               width={20} 
               height={20} 
