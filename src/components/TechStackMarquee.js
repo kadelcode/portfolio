@@ -39,15 +39,14 @@ const TechStackMarquee = () => {
     ];
   
     return (
-      <div className="overflow-hidden bg-gray-100 dark:bg-gray-800 py-4">
-        <div className="flex animate-marquee items-center space-x-4 sm:space-x-6">
+      <div className="w-full overflow-hidden bg-gray-100 dark:bg-gray-800 py-4">
+        <div className="flex animate-marquee items-center space-x-4 sm:space-x-6 min-w-max">
           {[...techIcons, ...techIcons].map((icon, index) => (
             <img
               key={index}
               src={icon.src}
               alt={icon.alt}
-              style={{color: icon.color}}
-              className={`h-8 w-8 mr-6 text-[${icon.color}]`}
+              className="h-8 w-8 mr-6"
             />
           ))}
         </div>
