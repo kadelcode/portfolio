@@ -33,7 +33,7 @@ const Home = () => {
         backgroundSize: 'cover',
       }}
       ></div>
-      <div className="text-center z-10 text-white mx-auto p-8">
+      <div className="text-center z-10 text-white mx-auto">
         <h1 className="text-5xl md:text-7xl font-quicksand text-purple-500  dark:text-purple-400 font-bold mb-4 mx-4"><TypingEffect /></h1><br />
         <motion.p
           initial={{ opacity: 0, y: 100 }}
