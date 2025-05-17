@@ -4,9 +4,11 @@ import Typed from "typed.js";
 const TypingEffect = () => {
   const el = useRef(null);
 
+  //const smile = 😊;
+
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Hi, I'm Ayodele.", "It's great to have you here on my portfolio site!"],
+      strings: ["Hi, I'm Ayodele.", `Excited to have you exploring my portfolio 😊!`],
       typeSpeed: 50,
       backSpeed: 25,
       loop: false, // No looping
