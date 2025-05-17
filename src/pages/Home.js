@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import TypingEffect from '../components/TypingEffect';
+import TechStackMarquee from '../components/TechStackMarquee';
 
 const Home = () => {
 
@@ -45,6 +46,15 @@ const Home = () => {
           into robust, efficient, and elegant solutions. I love building scalable,
           user-friendly applications that solve real-world problems.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100 }}
+          className='flex justify-center items-center py-4 max-w-[336px] sm:max-w-lg md:max-w-4xl mx-auto mt-20'
+        >
+          <TechStackMarquee />
+        </motion.div>
 
       </div>
     </motion.div>
