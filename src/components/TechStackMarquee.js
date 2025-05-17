@@ -40,13 +40,14 @@ const TechStackMarquee = () => {
   
     return (
       <div className="w-full overflow-hidden bg-gray-100 dark:bg-gray-800 py-4">
-        <div className="flex animate-marquee items-center space-x-4 sm:space-x-6 min-w-max">
+        <div className="flex animate-marquee items-center space-x-4 sm:space-x-6 min-w-max hover:[animation-play-state:paused]">
           {[...techIcons, ...techIcons].map((icon, index) => (
             <img
               key={index}
               src={icon.src}
               alt={icon.alt}
-              className="h-8 w-8 mr-6"
+              title={icon.name}
+              className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 transition-transform duration-200 hover:scale-110 mr-6"
             />
           ))}
         </div>
