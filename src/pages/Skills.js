@@ -62,7 +62,10 @@ const Skills = () => {
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 box-border'>
                             {category.items.map((skill) => (
                                 <div key={skill.name} className='bg-white dark:bg-gray-700 p-6 rounded-lg shadow box-content'>
-                                    <h4 className='text-xl text-black dark:text-white font-semibold mb-2'>{skill.name}</h4> {/* Skill name */}
+                                    <div className="flex justify-start items-center mb-2">
+                                        <h4 className='text-xl text-black dark:text-white font-semibold'>{skill.name}</h4> {/* Skill name */}
+                                        <img src={skill.icon} className='w-6 h-6 ml-3' alt='' />
+                                    </div>
                                     <div className='bg-gray-200 dark:bg-gray-600 rounded-full h-2'>
                                         <div
                                             className="bg-purple-500 dark:bg-purple-400 rounded-full h-2"
