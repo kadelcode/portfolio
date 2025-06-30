@@ -1,4 +1,20 @@
 const projects = [
+    // Resume Analyzer (Next.js + PDF.js + LangChain)
+    {
+        slug: 'resume-analyzer',
+        title: 'Resume Analyzer',
+        description: 'A web application for analyzing resumes using AI.',
+        imageUrl: '/images/projects/resume-analyzer.png',
+        technologies: ['Next.js', 'PDF.js', 'LangChain'],
+        features: [
+            'Resume Upload',
+            'AI-Powered Analysis',
+            'PDF Parsing',
+            'Resume Summarization',
+        ],
+        liveUrl: 'https://resume-analyzer-ziy6.vercel.app/',
+        githubUrl: 'https://github.com/kadelcode/resume-analyzer',
+    },
     // 2FA Authentication (Backend)
     {
         slug: '2fa-auth-backend',
