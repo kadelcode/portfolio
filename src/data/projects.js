@@ -1,4 +1,22 @@
 const projects = [
+    // 2FA Authentication (Backend)
+    {
+        slug: '2fa-auth-backend',
+        title: '2FA Microservice',
+        description: 'A Two-Factor Authentication Microservice.',
+        imageUrl: '/images/projects/2fa-page.png',
+        technologies: ['Express.js', 'MongoDB', 'JWT', 'Postman'],
+        features: [
+            'User Registration',
+            'User Login',
+            'QR Code Generaion',
+            'TOTP (Time-Based One-Time Password) Generation',
+            'Password Reset',
+            'Token-Based Authentication',
+        ],
+        liveUrl: 'https://2fa-auth-frontend.vercel.app/',
+        githubUrl: 'https://github.com/kadelcode/2fa-auth-service',
+    },
     // Authentication and Authorization (Backend)
     {
         slug: 'auth-backend',
